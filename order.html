@@ -1,0 +1,425 @@
+<!DOCTYPE html><html class="light" lang="uk"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Оформлення замовлення | DezMed</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#0061a2",
+                      "background": "#f7f9fb",
+                      "inverse-on-surface": "#eff1f3",
+                      "secondary-container": "#b7f568",
+                      "primary-fixed-dim": "#9dcaff",
+                      "on-primary-container": "#f4f7ff",
+                      "secondary-fixed-dim": "#9cd84f",
+                      "on-secondary-fixed-variant": "#ffffff",
+                      "on-tertiary-fixed": "#131b2e",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#416900",
+                      "primary": "#187bbe", /* Leaf Blue */
+                      "outline-variant": "#187bbe", /* Leaf Blue for borders */
+                      "surface-container-low": "#f2f4f6",
+                      "surface-bright": "#f7f9fb",
+                      "on-secondary-container": "#457000",
+                      "surface-container": "#eceef0",
+                      "on-surface": "#191c1e",
+                      "tertiary": "#51596f",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "secondary-fixed": "#98c63b", /* Fresh Lime */
+                      "outline": "#717882",
+                      "on-secondary-fixed": "#102000",
+                      "on-background": "#191c1e",
+                      "inverse-surface": "#2d3133",
+                      "inverse-primary": "#9dcaff",
+                      "on-primary-fixed": "#001d35",
+                      "on-surface-variant": "#414751",
+                      "surface-dim": "#d8dadc",
+                      "primary-container": "#187bbe",
+                      "on-primary-fixed-variant": "#00497c",
+                      "surface": "#f7f9fb",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "tertiary-fixed": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#697188",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#e6e8ea",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#f7f6ff",
+                      "primary-fixed": "#d1e4ff",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+
+        .site-logo {
+            mix-blend-mode: multiply;
+            background: transparent;
+        }
+        
+        /* Clinical precision inputs */
+        .clinical-input {
+            width: 100%;
+            border: 1px solid theme('colors.outline-variant');
+            background-color: theme('colors.surface-container-lowest');
+            padding: 12px 16px;
+            border-radius: theme('borderRadius.DEFAULT');
+            transition: all 0.2s ease;
+        }
+        
+        .clinical-input:focus {
+            outline: none;
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 4px rgba(24, 123, 190, 0.1);
+        }
+        
+        /* Minimalist Glassmorphism overlay for tech feel */
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Soft tactile shadow for cards */
+        .clinical-card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Button styles */
+        .btn-primary {
+            background-color: theme('colors.secondary-fixed');
+            color: theme('colors.on-secondary-fixed-variant');
+            padding: 16px 32px;
+            border-radius: theme('borderRadius.DEFAULT');
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(152, 198, 59, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased min-h-screen flex flex-col">
+<!-- Header (Suppressed as this is a linear transactional checkout page) -->
+<!-- We render a simplified transactional header instead of full global nav -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant py-6 px-margin-mobile md:px-margin-desktop sticky top-0 z-50">
+<div class="max-w-container-max mx-auto flex justify-between items-center">
+<a class="block h-10" href="#">
+<img alt="DezMed Logo" class="h-full object-contain site-logo" src="../../backend/public/uploads/logotype_61ca41caf4.jpg">
+</a>
+<div class="flex items-center gap-2 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Безпечне оформлення</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<div class="max-w-container-max mx-auto">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-8">
+                Оформлення замовлення
+            </h1>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Order Details Form -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Section 1: Contact Info -->
+<section class="bg-surface-container-lowest rounded-lg clinical-card-shadow border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-low px-8 py-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">person</span>
+<h2 class="font-headline-md text-headline-md text-on-background m-0">Дані отримувача</h2>
+</div>
+<div class="p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Ім'я</label>
+<input class="clinical-input" placeholder="Іван" required="" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Прізвище</label>
+<input class="clinical-input" placeholder="Медик" required="" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Телефон</label>
+<input class="clinical-input" placeholder="+38 (000) 000-00-00" required="" type="tel">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Email</label>
+<input class="clinical-input" placeholder="clinic@example.com" required="" type="email">
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Shipping -->
+<section class="bg-surface-container-lowest rounded-lg clinical-card-shadow border border-outline-variant overflow-hidden">
+<div class="bg-surface-container-low px-8 py-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<h2 class="font-headline-md text-headline-md text-on-background m-0">Адреса доставки</h2>
+</div>
+<div class="p-8 space-y-6">
+<!-- Delivery Method Segmented Control -->
+<div class="flex p-1 bg-surface-container rounded-lg border border-outline-variant w-full md:w-max">
+<button class="flex-1 md:flex-none px-6 py-2 rounded-md bg-surface-container-lowest shadow-sm border border-outline-variant font-label-sm text-label-sm text-primary font-bold">
+                                    Клініка / Офіс
+                                </button>
+<button class="flex-1 md:flex-none px-6 py-2 rounded-md text-on-surface-variant font-label-sm text-label-sm hover:text-primary transition-colors">
+                                    Нова Пошта
+                                </button>
+</div>
+<div class="space-y-6 mt-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Місто</label>
+<input class="clinical-input" placeholder="Київ" required="" type="text">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Вулиця</label>
+<input class="clinical-input" placeholder="вул. Академіка Заболотного" required="" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Будинок / Офіс</label>
+<input class="clinical-input" placeholder="21, корп Б" required="" type="text">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Коментар до замовлення</label>
+<textarea class="clinical-input h-24 resize-none" placeholder="Спеціальні інструкції для кур'єра..."></textarea>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Payment -->
+<section class="bg-surface-container-lowest rounded-lg clinical-card-shadow border border-outline-variant overflow-hidden mb-8 md:mb-0">
+<div class="bg-surface-container-low px-8 py-4 border-b border-outline-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<h2 class="font-headline-md text-headline-md text-on-background m-0">Метод оплати</h2>
+</div>
+<div class="p-8">
+<div class="space-y-4">
+<label class="flex items-center p-4 border border-primary rounded-lg bg-primary/5 cursor-pointer transition-all">
+<input checked="" class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" name="payment" type="radio">
+<span class="ml-4 font-body-lg text-body-lg text-on-background flex-grow">Безготівковий розрахунок (для юридичних осіб)</span>
+<span class="material-symbols-outlined text-primary">account_balance</span>
+</label>
+<label class="flex items-center p-4 border border-outline-variant rounded-lg hover:bg-surface-container-low cursor-pointer transition-all">
+<input class="w-5 h-5 text-primary focus:ring-primary border-outline-variant" name="payment" type="radio">
+<span class="ml-4 font-body-lg text-body-lg text-on-background flex-grow">Оплата карткою Visa / Mastercard</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-on-surface-variant">credit_score</span>
+</div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-5">
+<div class="bg-surface-container-lowest rounded-lg clinical-card-shadow border border-outline-variant sticky top-28 overflow-hidden">
+<div class="bg-surface-container-low px-8 py-4 border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-background m-0">Ваше замовлення</h2>
+</div>
+<div class="p-8 flex flex-col gap-6">
+<!-- Item List -->
+<div class="space-y-4 max-h-[400px] overflow-y-auto pr-2">
+<!-- Item 1 -->
+<div class="flex gap-4 items-center pb-4 border-b border-surface-container">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-highest rounded border border-outline-variant overflow-hidden flex items-center justify-center p-2">
+<img alt="Стерилліум Пюр" class="object-contain w-full h-full mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AP1WRLt19Pdh_Sr-vN5UjSgPRUv4xAHv25U7LCOy1cyZ1sGFwdMY30N3I4Dd3uV5StTIeFQeBbouVwbKubkrcQq_FYl4o-uhgyMNUlplTbDJ7XJTo20l3AtcnNegY_Lny6aUso-P8VSaiGD43Mn_w4S4ihbnXhyMOLKEfo2vmboUar_qBOxhgVhN5aqwzubukCRm3ZHfdBpgj_oxVqN2DRnJDUAbAFrGEPzHWfqgVC1hA_IXCRo_Kb1hXFvwNlmN">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md font-bold text-on-background m-0 leading-tight">Стерилліум Пюр (Sterillium pure)</h3>
+<span class="font-body-md text-body-md font-bold text-on-background whitespace-nowrap">2 450 ₴</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-1">Каністра 5л • Антисептик для рук</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-2">К-ть: 2</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4 items-center pb-4 border-b border-surface-container">
+<div class="w-20 h-20 flex-shrink-0 bg-surface-container-highest rounded border border-outline-variant overflow-hidden flex items-center justify-center p-2">
+<img alt="Бациллол" class="object-contain w-full h-full mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/AP1WRLtBJD2aD8ikQYxjKwrLqundHFhAd-dgyRvV-axh6Enq5DI9v-qR8R_i6T6i3xAbLfKEr2Mqjgd7SoVtRMQann0ORzwDOB-z_5UeicF6eYNr_oDxtu-7DvAntCNd0O8QCcOfg4Ugor8D3UkT9OeAFhiC7XB6ZvSQm5MsqH0dwzIgkiTPz5Uad9K4tHZmhkTWldETHDYKLrH6Lfj32cPjvTIIol30V28mavb8LoRRXNJmAeeogonuCILj61A">
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md font-bold text-on-background m-0 leading-tight">Бациллол АФ (Bacillol AF)</h3>
+<span class="font-body-md text-body-md font-bold text-on-background whitespace-nowrap">890 ₴</span>
+</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-1">Флакон 1л • Дезінфекція поверхонь</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm mt-2">К-ть: 5</div>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="bg-surface-container rounded-lg p-6 space-y-3">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Вартість товарів</span>
+<span>9 350 ₴</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Доставка</span>
+<span>За тарифами перевізника</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>ПДВ (20%)</span>
+<span>1 870 ₴</span>
+</div>
+<div class="w-full h-px bg-outline-variant my-2"></div>
+<div class="flex justify-between items-end">
+<span class="font-headline-md text-headline-md text-on-background">Разом</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-extrabold tracking-tight">9 350 ₴</span>
+</div>
+</div>
+<!-- Action -->
+<button class="btn-primary w-full flex items-center justify-center gap-2 mt-4 text-center">
+<span class="material-symbols-outlined">check_circle</span>
+                                Оформити замовлення
+                            </button>
+<!-- Trust Badges -->
+<div class="flex justify-center gap-6 mt-4">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-xl">verified</span>
+<span class="font-label-sm text-label-sm uppercase">ISO 13485 Certified</span>
+</div>
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-xl">shield</span>
+<span class="font-label-sm text-label-sm uppercase">Безпечна оплата</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Simplified for transactional page) -->
+<footer class="w-full py-8 px-margin-mobile md:px-margin-desktop bg-inverse-surface border-t border-outline-variant mt-auto">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-headline-md text-headline-md text-secondary-fixed">DezMed</div>
+<div class="font-body-md text-body-md text-inverse-on-surface text-center md:text-left">
+                © 2026 ТОВ Дезцентр Пллюс.  Всі права захищені.
+            </div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-inverse-on-surface">support_agent</span>
+<span class="font-body-md text-body-md text-inverse-on-surface">0 800 00 00 00</span>
+</div>
+</div>
+</footer>
+</body></html>
